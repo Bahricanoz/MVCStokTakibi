@@ -1,0 +1,26 @@
+﻿@model MVCSTOKUdemy.Models.Entity.tbl_satis
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <h3>Satış Ekleme Sayafası</h3>
+</div>
+<form method="post" class="form-group">
+    <div style="margin-top:10px;">
+        <label>Ürün Adı</label>
+        @Html.DropDownListFor(x => x.urunid, (List<SelectListItem>)ViewBag.urn, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Personel Adı</label>
+        @Html.DropDownListFor(x => x.personelid, (List<SelectListItem>)ViewBag.per, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Müşteri Adı</label>
+        @Html.DropDownListFor(x => x.musteriid, (List<SelectListItem>)ViewBag.mus, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-primary">Satış Kaydet</button>
+    </div>
+</form>

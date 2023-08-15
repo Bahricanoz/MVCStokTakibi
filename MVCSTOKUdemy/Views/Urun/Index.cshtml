@@ -1,0 +1,53 @@
+﻿@using MVCSTOKUdemy.Models.Entity
+@model List<Tbl_Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margiN:10px 0PX;">
+    <h3>Ürün İşlemleri</h3>
+    <a href="/Urun/UrunEkle/" class="btn btn-info">Ürün Ekle</a>
+</div>
+<table class="table table-bordered" id="tbl5">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Ürün Ad</td>
+            <td>Marka Ad</td>
+            <td>Kategori Ad</td>
+            <td>Durum</td>
+            <td>İşlemler</td>
+            <td>Güncelle</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{ string durum = ""; }
+        @foreach (var x in Model)
+        { 
+            if(x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+            if(x.Durum == false)
+            {
+                durum = "Pasif";
+            }
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Urunad</td>
+                <td>@x.Tbl_Marka.Markaadi</td>
+                <td>@x.Tbl_Kategori.Kategoriad</td>
+                <td>@durum</td>
+                <td><a href="/Urun/Aktifyap/@x.Id" class="btn btn-outline-success">Aktif Yap</a> <a href="/Urun/Pasifyap/@x.Id" class="btn btn-outline-danger">Pasif Yap</a></td>
+                <td><a href="/Urun/Guncelle/@x.Id" class="btn btn-warning">Ürün Düzenle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $('#tbl5').dataTable();
+</script>

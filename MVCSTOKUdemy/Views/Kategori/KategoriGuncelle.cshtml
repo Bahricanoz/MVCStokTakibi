@@ -1,0 +1,21 @@
+﻿@model MVCSTOKUdemy.Models.Entity.Tbl_Kategori
+@{
+    ViewBag.Title = "KategoriGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div style="margin-top:10px;">
+    <h2>Kategori Güncelleme Sayfası</h2>
+</div>
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post)) {
+    <div>
+        <label>Kategori Id</label>
+        @Html.TextBoxFor(x=>x.Id,new { @class="form-control",@readonly="readonly"})
+    </div>
+    <div>
+        <label>Kategori Ad</label>
+        @Html.TextBoxFor(x => x.Kategoriad, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-info">Kategori Güncelle</button>
+    </div>
+}

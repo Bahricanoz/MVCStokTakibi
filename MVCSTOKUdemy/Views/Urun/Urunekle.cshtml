@@ -1,0 +1,28 @@
+﻿@model MVCSTOKUdemy.Models.Entity.Tbl_Urun
+@{
+    ViewBag.Title = "Urunekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <h3>Ürün Ekleme Sayfası</h3>
+</div>
+<form class="form-group" method="post">
+    <div style="margin-top:10px;">
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control"  name="Urunad" required />
+    </div>
+    <div style="margin-top:10px;">
+        <label>Marka Id</label>
+        @*<input type="text" class="form-control" name="Markaid"  required />*@
+        @Html.DropDownListFor(x => x.Markaid, (List<SelectListItem>)ViewBag.mrk, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Kategori Id</label>
+        @*<input type="text" class="form-control"  name="Katid" required/>*@
+        @Html.DropDownListFor(x =>x.Katid, (List<SelectListItem>)ViewBag.ktg,new {@class="form-control"})
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-primary">Ürün Kaydet</button>
+    </div>
+</form>

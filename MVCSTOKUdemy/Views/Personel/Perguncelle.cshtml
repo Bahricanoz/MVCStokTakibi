@@ -1,0 +1,29 @@
+﻿@model MVCSTOKUdemy.Models.Entity.Tbl_Personel
+@{
+    ViewBag.Title = "Perguncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <h3>Personel Güncelleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("Perguncelle", "Personel", FormMethod.Post))
+ {
+    <div style="margin-top:10px;">
+        <label>Personel Id</label>
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Personel Ad</label>
+        @Html.TextBoxFor(m => m.Personelad, new { @class = "form-control", @required = "required" })
+    </div> <div style="margin-top:10px;">
+        <label>Personel Soyad</label>
+        @Html.TextBoxFor(m => m.Personelsoyad, new { @class = "form-control", @required = "required" })
+    </div> <div style="margin-top:10px;">
+        <label>Personel Departman</label>
+        @Html.TextBoxFor(m => m.Departman, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-primary">Personel Güncelle</button>
+    </div>
+ }

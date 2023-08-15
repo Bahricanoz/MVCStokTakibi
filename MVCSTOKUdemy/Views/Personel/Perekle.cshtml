@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Perekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <h3>Personel Ekleme Sayfası</h3>
+</div>
+<form class="form-group" method="post">
+    <div style="margin-top:10px;">
+        <label>Personel Adı</label>
+        <input type="text" name="Personelad" class="form-control" required />
+    </div>
+    <div style="margin-top:10px;">
+        <label>Personel Soyadı</label>
+        <input type="text" name="Personelsoyad" class="form-control" required />
+    </div>
+    <div style="margin-top:10px;">
+        <label>Personel Departman</label>
+        <input type="text" name="Departman" class="form-control" required />
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-primary">Personel Ekle</button>
+    </div>
+</form>

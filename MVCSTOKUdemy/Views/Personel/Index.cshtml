@@ -1,0 +1,51 @@
+﻿@using MVCSTOKUdemy.Models.Entity
+@model List<Tbl_Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin:10px 0px;">
+    <h3>Personel İşlemleri</h3> 
+    <a class="btn btn-info" href="/Personel/Perekle/">Personel Ekle</a>
+</div>
+<table class="table table-bordered" id="tbl4">
+    <thead>
+        <tr>
+            <th>Personel Id</th>
+            <th>Personel İsim</th>
+            <th>Personel Departman</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ string durum = "";}
+        @foreach (var x in Model)
+        {
+            if (x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+            if (x.Durum == false)
+            {
+                durum = "Pasif";
+            }
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Personelad @x.Personelsoyad</td>
+                <td>@x.Departman</td>
+                <td>@durum</td>
+                <td><a href="/Personel/Aktifyap/@x.Id" class="btn btn-outline-success">Aktif Yap</a> <a href="/Personel/Pasifyap/@x.Id" class="btn btn-outline-danger">Pasif Yap</a></td>
+                <td><a href="/Personel/Perguncelle/@x.Id" class="btn btn-warning">Personel Düzenle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $('#tbl4').dataTable();
+</script>

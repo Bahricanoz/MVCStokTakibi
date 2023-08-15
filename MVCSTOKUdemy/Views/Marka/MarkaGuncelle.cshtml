@@ -1,0 +1,26 @@
+﻿@model MVCSTOKUdemy.Models.Entity.Tbl_Marka
+@{
+    ViewBag.Title = "MarkaGuncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px">
+    <h3>Marka Güncelleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("MarkaGuncelle", "Marka", FormMethod.Post))
+ {
+    <div class="form-group">
+        <div>
+            <label>Marka Id</label>
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <div style="margin-top:10px;">
+            <label>Marka Id</label>
+            @Html.TextBoxFor(m => m.Markaadi, new { @class = "form-control", @required = "required" })
+        </div>
+        <div style="margin-top:10px;">
+            <button class="btn btn-primary">Marka Güncelle</button>
+        </div>
+    </div>
+ } 
+

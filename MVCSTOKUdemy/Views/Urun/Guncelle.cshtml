@@ -1,0 +1,34 @@
+﻿@model MVCSTOKUdemy.Models.Entity.Tbl_Urun
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <h3>Ürün Güncelleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div style="margin-top:10px;">
+        <label>Ürün Id</label>
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Ürün Ad</label>
+        @Html.TextBoxFor(m => m.Urunad, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Marka Id</label>
+        @*@Html.TextBoxFor(m => m.Markaid, new { @class = "form-control", @required = "required" })*@
+        @Html.DropDownListFor(x => x.Markaid, (List<SelectListItem>)ViewBag.mrk, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <label>Kategori Id</label>
+        @*@Html.TextBoxFor(m => m.Katid, new { @class = "form-control", @required = "required" })*@
+        @Html.DropDownListFor(x => x.Katid, (List<SelectListItem>)ViewBag.ktg, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px;">
+        <button class="btn btn-primary">Ürün Güncelle</button>
+    </div>
+}
+

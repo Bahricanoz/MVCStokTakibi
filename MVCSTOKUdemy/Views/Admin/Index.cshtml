@@ -1,0 +1,48 @@
+﻿@using MVCSTOKUdemy.Models.Entity
+@model List<Tbl_Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div style="margin:10px 0px;">
+    <h3>Admin İşlemleri</h3>
+    <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">Admin Ekle</button>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>Admin Id</th>
+        <th>Kullanıcı Adı</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+        @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Kullanciadı</td>
+                    <td><a class="btn btn-danger" href="/Admin/Adminsil/@x.Id">Admin Sil</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Admin Ekleme Paneli</h2>
+            </div>
+            <form action="/Admin/Adminekle/" method="post">
+                <div class="modal-body">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" name="Kullanciadı" class="form-control" />
+                    <br />
+                    <label>Şifre</label>
+                    <input type="password" name="Sifre" class="form-control" />
+                    <br />
+                    <input type="submit" name="Kaydet" class="btn btn-info" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
