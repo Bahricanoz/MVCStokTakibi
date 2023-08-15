@@ -1,6 +1,6 @@
 MVC SATIŞ TAKİP SİSTEMİ
 ---------------------------------
-Projeye başlarnırken stok takip sistemi olarak düşünülmüştü proje esnasında satış takip sistemine çevirilmiştir. 
+Projeye başlanırken stok takip sistemi olarak düşünülmüştü proje esnasında satış takip sistemine çevirilmiştir. 
 
 Proje Hakkında:
 ---------------------------------
