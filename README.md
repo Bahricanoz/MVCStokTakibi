@@ -1,5 +1,7 @@
 MVC SATIŞ TAKİP SİSTEMİ
 ---------------------------------
+Projeye başlarnırken stok takip sistemi olarak düşünülmüştü proje esnasında satış takip sistemine çevirilmiştir. 
+
 Proje Hakkında:
 ---------------------------------
 Bu proje , MVC5 kullanarak Entity Framework yapısı kullanarak kodlanmıştır.Dbfirst yaklaşımı ile SQL Server veritabanını destekleyen bir Satış Takip Sistemi projesidir.Login paneli ve Satış Paneli olmak üzere iki panelden oluşmaktadır.  Satış panelinde Marka, Kategori , Personel,Ürün , Admin ve Satış sayfalarından oluşmaktadır.
